@@ -1,0 +1,17 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+<div class="container">
+    <div class="row mt-5 justify-content-center">
+        <div class="col-12 col-md-6">
+            {% for t in matokeo %}
+              <div class="card p-3 h-100">
+                <div>
+                    <p>{{ t.bei }}</p>
+                </div>
+                <img src="{{ url_for('static',filename='images/'+ t.picha)}}">
+              </div>
+              {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

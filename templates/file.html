@@ -1,0 +1,25 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+<body>
+    <div class="container bg-light shadow mt-5 mb-5 p-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="card p-5 mt-5">
+                <form action="/add" method="POST" enctype="multipart/form-data">
+                    <div class="form-label align-items-center text-center">
+                    <input type="file" name="file" placeholder="andika bei " class="form-control mb-3 mt-4 text-center">
+                    <input type="text" name="bei" placeholder="maelezo ya bei" class="form-control pw-3 mb-3 text-center">
+                    <input type="text" name="maelezo" placeholder="andika tarehe " class="form-control mb-3 text-center">
+                    <input type="text" name="tarehe" placeholder="andika picha" class="form-control mb-3 text-center">
+                    <button type="submit" class="form-control  text-center">submit</button>
+                    </div>
+                </form>
+                </div>
+                <div class="text-center text-decoration-none mt-5">
+                    <a href="/nyumbani">ANDIKA TAARIFA YA KILA MECHI</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

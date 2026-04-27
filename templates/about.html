@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+<style>
+  .hero-about {
+    background: linear-gradient(135deg, #0D47A1 0%, #1976D2 100%);
+    color: #fff;
+    padding: 70px 20px;
+    text-align: center;
+  }
+  .value-card {
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: box-shadow .25s, transform .25s;
+    height: 100%;
+  }
+  .value-card:hover { box-shadow: 0 8px 28px rgba(13,71,161,.12); transform: translateY(-4px); }
+  .value-icon {
+    width: 54px; height: 54px;
+    background: linear-gradient(135deg, #0D47A1, #2196F3);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: #fff; margin: 0 auto 16px;
+  }
+  .stat-box {
+    background: linear-gradient(135deg, #0D47A1, #1976D2);
+    border-radius: 12px;
+    color: #fff;
+    padding: 30px 16px;
+    text-align: center;
+  }
+  .stat-box h2 { font-weight: 900; font-size: 2.2rem; }
+  .avatar-circle {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0D47A1, #2196F3);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.2rem; color: #fff;
+    margin: 0 auto 14px;
+  }
+  .team-card {
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+    transition: box-shadow .2s;
+  }
+  .team-card:hover { box-shadow: 0 6px 20px rgba(13,71,161,.1); }
+</style>
+
+<!-- HERO -->
+<section class="hero-about">
+  <div class="container">
+    <h1 class="display-5 fw-bold mb-3">Kuhusu Sisi</h1>
+    <p class="lead mx-auto" style="max-width:520px; opacity:.88;">
+      Tunajua nini kinachofanya biashara ifanikiwe mtandaoni. Tunakusaidia kufikia wateja kwa njia ya kisasa na ya kuaminika.
+    </p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6">
+        <h2 class="fw-bold text-primary mb-3">Tunaojua</h2>
+        <p class="text-secondary lh-lg">Sisi ni timu ya wataalamu wa ujenzi wa tovuti za biashara. Tunasaidia makampuni ya Tanzania na Afrika kujenga uwepo imara mtandaoni ili waweze kupata wateja wengi zaidi.</p>
+        <p class="text-secondary lh-lg">Kila tovuti tunayotengeneza ina muundo wa kipekee, inafanya kazi vizuri kwenye simu na kompyuta, na imeundwa kusaidia biashara kukua.</p>
+      </div>
+      <div class="col-md-6">
+        <div class="rounded-4 d-flex align-items-center justify-content-center"
+             style="height:260px; background:linear-gradient(135deg,#0D47A1,#42A5F5); font-size:5rem;">
+          🚀
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold text-primary mb-1">Maadili Yetu</h2>
+    <p class="text-muted mb-4">Tunajengwa juu ya misingi hii kuhakikisha tunatoa huduma bora kwa kila mteja.</p>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <h6 class="fw-bold">Kasi na Ufanisi</h6>
+          <p class="text-muted small mb-0">Tunafanya kazi kwa haraka na ubora. Mradi wako utakamilika kwa wakati.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h6 class="fw-bold">Lengo Wazi</h6>
+          <p class="text-muted small mb-0">Kila uamuzi unalenga kukusaidia kufikia malengo yako ya biashara.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h6 class="fw-bold">Uwazi na Uaminifu</h6>
+          <p class="text-muted small mb-0">Tunakuambia ukweli kuhusu mradi, bei, na muda unaohitajika.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="value-card">
+          <div class="value-icon">🔧</div>
+          <h6 class="fw-bold">Msaada Baada ya Mradi</h6>
+          <p class="text-muted small mb-0">Baada ya kukabidhi tovuti yako, bado tuko hapa kusaidia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
