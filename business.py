@@ -52,6 +52,7 @@ def service():
 def admin():
     return render_template('admin.html')
 
+#kujaza bidhaa
 @app.route('/add',methods=['POST','GET'])
 def add():
     if request.method=='POST':
@@ -66,6 +67,36 @@ def add():
      db.session.add(matokeo)
      db.session.commit()
     return render_template('file.html')
+
+#chagua mechi zote kabisa hapa
+@app.route('/adminselect')
+def adminselect():
+    zote=bidhaa.query.all()
+    return render_template('adminselect.html',zote=zote)
+
+#kudelete bidhaa
+@app.route('/delete/<int:id>')
+def delete(id):
+    kitu=bidhaa.query.get(id)
+    db.session.delete(kitu)
+    db.session.commit()
+    return redirect('/adminselect')
+
+#kuupdate bidhaa
+@app.route('/update/<int:id>',methods=['POST'])
+def adminupdate(id):
+    mat=bidhaa.query.get(id)
+    bei=request.form.get('bei')
+    maelezo=request.form.get('maelezo')
+    tarehe=request.form.get('tarehe')
+    picha=request.form.get('picha')
+    mat.bei=bei
+    mat.maelezo=maelezo
+    mat.tarehe=tarehe
+    mat.picha=picha
+    db.session.commit()
+    return redirect(url_for('adminselect'))
+    
 
 #HAPA NI SEHEMU YA KUJASILI WATUMIAJI
 if __name__=='__main__':

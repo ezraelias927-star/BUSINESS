@@ -8,6 +8,14 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<style>
+  .active {
+    color:yellow !important;
+    border: 1px;
+    background:blueviolet;
+    border-radius:10px
+  }
+</style>
 <body class="d-flex flex-column min-vh-100">
 
   <!-- Navbar -->
@@ -21,10 +29,10 @@
       <!-- Desktop Nav -->
       <div class="collapse navbar-collapse fs-5" id="navbarNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/service">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.path=='/'%}active{%endif%}" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.path=='/service' %}active{%endif%}" href="/service">Services</a></li>
+          <li class="nav-item"><a class="nav-link {%if request.path=='/about'%}active{%endif%}" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link {if request.path=='/contact'%}active{endif%}" href="/contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -38,10 +46,10 @@
     </div>
     <div class="offcanvas-body">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="service">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link {% if request.path=='/'%}active{%endif%}" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link {% if request.path=='service'%}active{%endif%} " href="service">Services</a></li>
+        <li class="nav-item"><a class="nav-link {% if request.path=='about'%}active{%endif%} " href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link {% if request.path=='contact'%}active{%endif%} " href="/contact">Contact</a></li>
       </ul>
     </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
