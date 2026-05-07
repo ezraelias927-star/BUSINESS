@@ -32,7 +32,7 @@
           <li class="nav-item"><a class="nav-link {% if request.path=='/'%}active{%endif%}" href="/">Home</a></li>
           <li class="nav-item"><a class="nav-link {% if request.path=='/service' %}active{%endif%}" href="/service">Services</a></li>
           <li class="nav-item"><a class="nav-link {%if request.path=='/about'%}active{%endif%}" href="/about">About</a></li>
-          <li class="nav-item"><a class="nav-link {if request.path=='/contact'%}active{endif%}" href="/contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link {%if request.path=='/contact'%}active{%endif%}" href="/contact">Contact</a></li>
         </ul>
       </div>
     </div>

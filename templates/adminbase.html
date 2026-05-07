@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    .active{
+    color:yellow !important;
+    border: 1px;
+    background:blueviolet !important;
+    border-radius:10px
+    }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>business Base Template</title>
@@ -18,7 +26,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="waka">
                 <div class="navbar-nav ms-auto ">
-                <a class="nav-link  ms-2 fw-bold {% if request.path=='/'%}active{%endif%} " href="/adminselect">UPDATE</a>
+                <a class="nav-link  ms-2 fw-bold {% if request.path=='/adminselect'%}active{%endif%} " href="/adminselect">UPDATE</a>
+                 <a class="nav-link  ms-2 fw-bold {% if request.path=='/add'%}active{% endif %}" href="/add">ONGEZA BIDHAA</a>
                 <a class="nav-link  ms-2 fw-bold {% if request.path=='/joins'%}active{% endif %}" href="/">RUDI KWA USERS</a>
                 </div>
                     </a>
