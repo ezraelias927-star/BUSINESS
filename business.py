@@ -56,16 +56,20 @@ def admin():
 @app.route('/add',methods=['POST','GET'])
 def add():
     if request.method=='POST':
-     file=request.files.get('file')
-     filename=file.filename
-     file_path=os.path.join(app.config['UPLOAD_FOLDER'],filename)
-     file.save(file_path)
-     bei=request.form.get('bei')
-     maelezo=request.form.get('maelezo')
-     tarehe=request.form.get('tarehe')
-     matokeo=bidhaa(bei=bei,maelezo=maelezo,tarehe=tarehe,picha=filename)
-     db.session.add(matokeo)
-     db.session.commit()
+     try:
+      file=request.files.get('file')
+      filename=file.filename
+      file_path=os.path.join(app.config['UPLOAD_FOLDER'],filename)
+      file.save(file_path)
+      bei=request.form.get('bei')
+      maelezo=request.form.get('maelezo')
+      tarehe=request.form.get('tarehe')
+      matokeo=bidhaa(bei=bei,maelezo=maelezo,tarehe=tarehe,picha=filename)
+      db.session.add(matokeo)
+      db.session.commit()
+     except:
+         flash('hakisha umeweka picha! na maelezo yote')
+         return render_template('file.html')
     return render_template('file.html')
 
 #chagua mechi zote kabisa hapa

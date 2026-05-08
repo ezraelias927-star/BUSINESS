@@ -5,6 +5,16 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
                 <div class="card p-5 mt-5">
+                    <div>
+                        {% with messages=get_flashed_messages() %}
+                        {% if messages %}
+                        <div class="text-center text-danger">
+                            {% for message in messages %}
+                            <p>{{ message }}</p>
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
                 <form action="/add" method="POST" enctype="multipart/form-data">
                     <div class="form-label align-items-center text-center">
                     <input type="file" name="file" placeholder="pakia picha " class="form-control mb-3 mt-4 text-center">
@@ -14,9 +24,6 @@
                     <button type="submit" class="form-control  text-center">submit</button>
                     </div>
                 </form>
-                </div>
-                <div class="text-center text-decoration-none mt-5">
-                    <a href="/nyumbani">ANDIKA TAARIFA YA KILA MECHI</a>
                 </div>
             </div>
         </div>
